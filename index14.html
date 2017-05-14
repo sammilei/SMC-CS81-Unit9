@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<p> <strong>We</strong> have just started <strong>this</strong> section for the users 
+(<strong>beginner</strong> to intermediate) who want to work with <strong>various</strong> 
+JavaScript <strong>problems</strong> and write scripts online to <strong>test</strong> 
+their JavaScript  <strong>skill</strong>.
+</p>
+
+<script>
+var wordItems = document.getElementsByTagName('strong'); //get an array of all nodes with "strong" style
+
+//add mouseover and mouseout listners to each word with styling strong
+for(var i = 0; i < wordItems.length; i++){
+	//using immediately invoked function expression for lexical scope
+	(function(i){
+		wordItems[i].addEventListener("mouseover", function(){wordItems[i].style.color = "red";});//mouseover : red
+		wordItems[i].addEventListener("mouseout", function(){wordItems[i].style.color = "";});//mouseout: default color
+		console.log(i);
+	})(i);
+}
+
+</script>
+</body>
+</html>
